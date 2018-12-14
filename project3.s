@@ -88,9 +88,10 @@ validCharactersLoop:
 	bne $t3, 1, invalidNumberError
 	
 multiply:
-	mul $t5, $t4, $t9			# $t5 contains the product of the base- 30 exponent and our input number
-	add $s5, $s5, $t5			# that product is added to the register that stores the sum 
-	mul $t4, $t4, 30  
+
+#	mul $t5, $t4, $t9			# $t5 contains the product of the base- 30 exponent and our input number
+#	add $s5, $s5, $t5			# that product is added to the register that stores the sum 
+#	mul $t4, $t4, 30  
 	j validCharactersLoop	
 whatKindOfSpace:				# this evaluates if the space is in between the character or at the trailing point
 	beq $a3, 1, invalidNumberError		# once non-null, non-space, non-endline is found, a3 = 1, if it is in between the characters, then it goes to invalid input
