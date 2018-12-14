@@ -88,10 +88,11 @@ validCharactersLoop:
 	bne $t3, 1, invalidNumberError
 	
 multiply:
-	move $a0, $t9				
+	move $a0, $t9				#moving the values to argument registers to pass it on to the sub-program		
 	move $a1, $t4
 	move $a2, $s5
-
+	
+	jal calculate_results			#calling the sub-program
 
 #	mul $t5, $t4, $t9			# $t5 contains the product of the base- 30 exponent and our input number
 #	add $s5, $s5, $t5			# that product is added to the register that stores the sum 
