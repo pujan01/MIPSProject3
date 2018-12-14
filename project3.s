@@ -97,10 +97,6 @@ multiply:
 	move $s5, $v0				# the returned value from the sub-program is moved to s5, which contains the sum 
 	move $t4, $v1				# updated place value of base-30 number
 	
-
-#	mul $t5, $t4, $t9			# $t5 contains the product of the base- 30 exponent and our input number
-#	add $s5, $s5, $t5			# that product is added to the register that stores the sum 
-#	mul $t4, $t4, 30  
 	j validCharactersLoop	
 whatKindOfSpace:				# this evaluates if the space is in between the character or at the trailing point
 	beq $a3, 1, invalidNumberError		# once non-null, non-space, non-endline is found, a3 = 1, if it is in between the characters, then it goes to invalid input
