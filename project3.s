@@ -93,6 +93,10 @@ multiply:
 	move $a2, $s5
 	
 	jal calculate_results			#calling the sub-program
+	
+	move $s5, $v0				# the returned value from the sub-program is moved to s5, which contains the sum 
+	move $t4, $v1				# updated place value of base-30 number
+	
 
 #	mul $t5, $t4, $t9			# $t5 contains the product of the base- 30 exponent and our input number
 #	add $s5, $s5, $t5			# that product is added to the register that stores the sum 
