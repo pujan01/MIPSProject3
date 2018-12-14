@@ -123,7 +123,12 @@ invalidNumberError: 				#If the string includes at least one character not in th
 	la $a0, invalidNumber
 	syscall
 	
-				
+calculate_results:
+	mul $t5, $a1, $a0			# $t5 contains the product of the base- 30 exponent and our input number
+	add $v0, $t5, $a2			#returning the sum until now using the v0 register
+	mul $v1, $a1, 30			#updating the place value of our base- 30 number, ready for returning 
+	jr $ra						
+		
 exit:
 li $v0, 10			#tell the system to prepare for exit
 syscall
